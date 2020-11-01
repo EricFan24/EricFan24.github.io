@@ -1,0 +1,390 @@
+body {
+	background-image: url('../images/BG.jpg');
+	font-family: 'Luckiest Guy', cursive;
+}
+
+.box {
+	background: rgba(255,255,255,0.8);
+	padding: 20px;
+	border-radius: 20px/50px;
+	background-clip: padding-box;
+	text-align: center;
+}
+
+#nav {
+	float: right;
+	width: 180px;
+}
+
+#nav-logged-in {
+	float: right;
+	width: 450px;
+}
+
+#logged-in-as {
+	font-size: 1.2em;
+	color: green;
+	padding:20px;
+}
+
+#button-logout {
+	color: red;
+}
+
+#home {
+	float: left;
+	width: 100px;
+}
+
+.button {
+	font-size: 1.2em;
+	padding: 10px;
+	border-radius: 25px/50px;
+	text-decoration: none;
+	cursor: pointer;
+	transition: all 0.3s ease-out;
+	font-weight: 400;
+}
+
+.button:hover {
+ 	background: white;
+}
+
+#button-login {
+  	color: green;
+}
+
+#button-signup {
+  	color: red;
+}
+
+#button-home {
+	color: green;
+}
+
+.overlay {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.7);
+	transition: opacity 250ms;
+	visibility: hidden;
+	opacity: 0;
+}
+
+.overlay:target {
+	visibility: visible;
+	opacity: 1;
+}
+
+.popup {
+	margin: 70px auto;
+	padding: 30px;
+	background: white;
+	border-radius: 5px;
+	width: 30%;
+	position: relative;
+	transition: all 2s ease-in-out;
+}
+
+#popup-SPIN .popup {
+	margin: 50px auto;
+	padding: 30px;
+	background: white;
+	border-radius: 5px;
+	width: 95%;
+	position: relative;
+	transition: all 2s ease-in-out;
+}
+
+.popup .close {
+	position: absolute;
+	top: 30px;
+	right: 40px;
+	transition: all 200ms;
+	font-size: 25px;
+	font-weight: bold;
+	text-decoration: none;
+	color: black;
+}
+
+.myform{
+	padding: 20px;
+}
+
+.myform .form-group{
+	padding-bottom: 15px;
+}
+
+.myform label{
+	display: block;
+}
+
+#button-submit {
+	position: absolute;
+	left: 40px;
+}
+
+#button-cancel {
+	position: absolute;
+	left: 120px;
+}
+
+#headline {
+	padding-top: 90px;
+	padding-left: 150px;
+	color: rgb(40, 40, 70);
+	font-size: 4em;
+}
+
+#selection {
+	width: 80%;
+	height: 380px;
+	margin-left: 140px;
+	margin-top: 20px;
+	display: flex;
+}
+
+#basketball {
+	margin-top: 80px;
+	width: 33%;
+	height: 400px;
+}
+
+#table-tennis {
+	margin-top: 80px;
+	width: 33%;
+	height: 400px;
+}
+
+#soccer {
+	margin-top: 80px;
+	width: 33%;
+	height: 400px;
+}
+
+#sport-icon {
+	font-size: 200px;
+	color: coral;
+}
+
+#sport-icon:hover {
+	color: rgb(40, 40, 70);
+	text-shadow: 3px 3px 9px coral;
+}
+
+#show-everything {
+	margin: auto;
+	width: 100%;
+	padding: 20px;
+	text-align: center;
+}
+
+#button-show-everything {
+	color: rgb(40, 40, 70);
+	font-size: 2em;
+}
+
+#results, #popup-SPIN {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 900;
+}
+
+#result-SPIN {
+	width: 80%;
+	height: 200px;
+	margin-left: 140px;
+	display: flex;
+}
+
+#popup-SPIN #result-SPIN {
+	width: 100%;
+	margin-left: 0px;
+}
+
+#result-WangChen, #result-PingPod {
+	margin-top: 15px;
+	width: 80%;
+	height: 200px;
+	margin-left: 140px;
+	display: flex;
+}
+
+#pic-SPIN, #pic-WangChen, #pic-PingPod {
+	padding-left: 20px;
+	width: 300px;
+	height: 200px;
+}
+
+.info-box {
+	width: 450px;
+	margin-left: 20px;
+	padding: 5px;
+	text-align: left;
+}
+
+.club-name {
+	font-size: 2em;
+	color: rgb(0, 115, 180);
+}
+
+.club-name a{
+	text-decoration: none;
+	color: rgb(0, 115, 180);
+}
+
+.club-name a:hover{
+	text-decoration: none;
+	color: rgb(40, 40, 70);
+	text-shadow: 3px 3px 9px coral;
+}
+
+
+.club-distance {
+	font-size: 1.1em;
+}
+
+.club-attribute {
+	display: flex;
+	height: 150px;
+}
+
+.club-attribute ul{
+	padding: 0;
+	list-style: none;
+	align-self: flex-end;
+}
+
+.club-attribute li{
+	padding-bottom: 6px;
+}
+
+.playpal {
+	height: 200px;
+	width: 600px;
+	border-left: 2px grey dotted;
+}
+
+.looking-for-playpal {
+	color: coral;
+	font-size: 1.1em;
+}
+
+.playpal-container {
+	padding-left: 30px;
+	height: 180px;
+	width: 500px;
+	display: grid;
+	grid-template-columns: 250px 2fr;
+	grid-template-rows: 90px 2fr;
+}
+
+.reviews-container {
+	padding-left: 30px;
+	height: 300px;
+	width: 900px;
+	display: grid;
+	grid-template-rows: 90px 2fr;
+}
+
+.playpal-box, .review-box {
+	display: grid;
+	grid-template-columns: 80px 2fr;
+}
+
+.playpal-box, .review-box i {
+	font-size: 50px;
+}
+
+.playpal-profile, .review-profile {
+	margin-top: 15px;
+	margin-left: 5px;
+	width: 70px;
+}
+
+.playpal-info {
+	width: 150px;
+	height: 50px;
+	float: right;
+	margin-top: 20px;
+	text-align: left;
+	font-weight: 400;
+	font-style: italic;
+	font-size: 14px;
+}
+
+.playpal-add {
+	margin-top: 5px;
+	margin-left: 12px;
+	width: 70px;
+
+}
+
+.playpal-add i{
+	color: coral;
+	font-size: 40px;
+}
+
+.playpal-add i:hover{
+	color: rgb(40, 40, 70);
+	text-shadow: 3px 3px 9px coral;
+}
+
+.player-reviews {
+	padding: 20px;
+	padding-left: 40px;
+}
+
+.review-info {
+	text-align: justify;
+	font-weight: 400;
+	font-size: 14px;
+}
+
+
+#map-SPIN {
+	position: absolute;
+	width: 450px;
+	height: 260px;
+	border: 0px;
+	left: 1000px;
+	top: 340px;
+}
+
+.my-comment {
+	width: 800px;
+	height: 200px;
+	text-align: justify;
+	font-weight: 400;
+	font-size: 14px;
+	border-left: 2px grey dotted;
+	padding: 0px 20px;
+}
+
+.my-info {
+	width: 800px;
+	height: 200px;
+	text-align: justify;
+	font-weight: 400;
+	font-size: 14px;
+	border-left: 2px grey dotted;
+	padding: 0px 20px;
+}
+
+.remove-comment, .remove-playpal {
+	text-align: right;
+	font-weight: 900;
+	color: coral;
+}
+
+.remove-comment:hover {
+	color: rgb(40, 40, 70);
+	text-shadow: 3px 3px 9px coral;
+}
+
+.remove-playpal:hover {
+	color: rgb(40, 40, 70);
+	text-shadow: 3px 3px 9px coral;
+}

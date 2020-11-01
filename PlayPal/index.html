@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/27c93eade2.js" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="box" id="nav">
+		<a href="#popup-login" class="button" id="button-login">LOG IN</a>
+		<a href="#popup-signup" class="button" id="button-signup">SIGN UP</a>
+	</div>
+	<div id="popup-login" class="overlay">
+		<div class="popup">
+			<h2>Log In</h2>
+			<a class="close" href="#">&cross;</a>
+			<form class="myform">
+				<div class="form-group">
+					<label>Email:</label>
+					<input type="text" name="email">
+				</div>
+				<div class="form-group">
+					<label>Password:</label>
+					<input type="text" name="password">
+				</div>
+				<a href="profile.html" id="button-submit" class="button">SUBMIT</a>
+				<a href="#" id="button-cancel" class="button">CANCEL</a>
+			</form>
+		</div>
+	</div>
+	<div id="popup-signup" class="overlay">
+		<div class="popup">
+			<h2>Create New Profile</h2>
+			<a class="close" href="#">&cross;</a>
+			<form class="myform">
+				<div class="form-group">
+					<label>Email:</label>
+					<input type="text" name="email">
+				</div>
+				<div class="form-group">
+					<label>Password:</label>
+					<input type="text" name="password">
+				</div>
+				<a href="profile.html" id="button-submit" class="button">SUBMIT</a>
+				<a href="#" id="button-cancel" class="button">CANCEL</a>
+			</form>
+		</div>
+	</div>
+	<div id="headline">
+		I am looking to play...
+	</div>
+	<div class="box" id="selection">
+		<div id="basketball">
+			<i class="fas fa-basketball-ball" id="sport-icon"></i>
+		</div>
+		<div id="table-tennis">
+			<a href="results_table_tennis.html"><i class="fas fa-table-tennis" id="sport-icon"></i></a>
+		</div>
+		<div id="soccer">
+			<i class="fas fa-futbol" id="sport-icon"></i>
+		</div>
+	</div>
+	<div id="show-everything">
+		<a href="results_table_tennis.html" class="button" id="button-show-everything">Show me everything!</a>
+	</div>
+</body>
+</html>

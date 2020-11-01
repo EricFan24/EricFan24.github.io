@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Table Tennis Results</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/27c93eade2.js" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="box" id="home">
+		<a href="index.html" class="button" id="button-home">HOME</a>
+	</div>
+	<div class="box" id="nav">
+		<a href="#popup-login" class="button" id="button-login">LOG IN</a>
+		<a href="#popup-signup" class="button" id="button-signup">SIGN UP</a>
+	</div>
+	<div id="popup-login" class="overlay">
+		<div class="popup">
+			<h2>Log In</h2>
+			<a class="close" href="#">&cross;</a>
+			<form class="myform">
+				<div class="form-group">
+					<label>Email:</label>
+					<input type="text" name="email">
+				</div>
+				<div class="form-group">
+					<label>Password:</label>
+					<input type="text" name="password">
+				</div>
+				<a href="profile.html" id="button-submit" class="button">SUBMIT</a>
+				<a href="#" id="button-cancel" class="button">CANCEL</a>
+			</form>
+		</div>
+	</div>
+	<div id="popup-signup" class="overlay">
+		<div class="popup">
+			<h2>Create New Profile</h2>
+			<a class="close" href="#">&cross;</a>
+			<form class="myform">
+				<div class="form-group">
+					<label>Email:</label>
+					<input type="text" name="email">
+				</div>
+				<div class="form-group">
+					<label>Password:</label>
+					<input type="text" name="password">
+				</div>
+				<a href="profile.html" id="button-submit" class="button">SUBMIT</a>
+				<a href="#" id="button-cancel" class="button">CANCEL</a>
+			</form>
+		</div>
+	</div>
+	<div id="popup-review" class="overlay">
+		<div class="popup">
+			<h2>Write A Review!</h2>
+			<a class="close" href="#">&cross;</a>
+			<form class="myform">
+				<div class="form-group">
+					<label>Email:</label>
+					<input type="text" name="email">
+				</div>
+				<div class="form-group">
+					<label>My Review:</label>
+					<textarea name="message" name="name"></textarea>
+				</div>
+				<a href="#" id="button-submit" class="button">SUBMIT</a>
+				<a href="#" id="button-cancel" class="button">CANCEL</a>
+			</form>
+		</div>
+	</div>
+	<div id="popup-playpal" class="overlay">
+		<div class="popup">
+			<h2>Looking For Playpals!</h2>
+			<a class="close" href="#">&cross;</a>
+			<form class="myform">
+				<div class="form-group">
+					<label>Date</label>
+					<input type="date" name="date">
+				</div>
+				<div class="form-group">
+					<label>Time</label>
+					<input type="time" name="time">
+				</div>
+				<div class="form-group">
+					<label>Years of Experience</label>
+					<input type="number" name="experience" placeholder="10">
+				</div>
+				<div class="form-group">
+					<label>Email:</label>
+					<input type="text" name="email" placeholder="12345@columbia.edu">
+				</div>
+				<div class="form-group">
+					<label>I'll be there every week!</label>
+					<input type="checkbox" name="checkbox">
+				</div>
+				<a href="#" id="button-submit" class="button">SUBMIT</a>
+				<a href="#" id="button-cancel" class="button">CANCEL</a>
+			</form>
+		</div>
+	</div>
+	<div id="popup-SPIN" class="overlay">
+		<div class="popup">
+			<a class="close" href="#">&cross;</a>
+			<div class="box" id="result-SPIN">
+				<img src='images/table-tennis-SPIN.jpg' alt='pic-SPIN' id="pic-SPIN">
+				<div class="info-box">
+					<div class="club-name">
+						SPIN New York 23
+					</div>
+					<div class="club-distance">
+						1.5 miles from me
+					</div>
+					<div class="club-attribute">
+						<ul>
+							<li><i class="far fa-check-circle">&nbsp;</i>Walk-in</li>
+							<li><i class="far fa-check-circle">&nbsp;</i>Casual</li>
+						</ul>
+					</div>
+				</div>
+				<div class="playpal">
+					<div class="looking-for-playpal">
+						Looking For Playpals!
+					</div>
+					<div class="playpal-container">
+						<div class="playpal-box">
+							<div class="playpal-profile">
+								<i class="fas fa-user-circle"></i>
+							</div>
+							<div class="playpal-info">
+								3 years of experience
+								<br>
+								Sat & Sun 9AM ~ 3PM
+							</div>
+						</div>
+						<div class="playpal-box">
+							<div class="playpal-profile">
+								<i class="fas fa-user-circle"></i>
+							</div>
+							<div class="playpal-info">
+								8 years of experience
+								<br>
+								Sat 9AM ~ 12PM
+							</div>
+						</div>
+						<div class="playpal-box">
+							<div class="playpal-profile">
+								<i class="fas fa-user-circle"></i>
+							</div>
+							<div class="playpal-info">
+								20 years of experience
+								<br>
+								Sun & Mon 9AM ~ 1PM
+							</div>
+						</div>
+						<div class="playpal-box">
+							<div class="playpal-add">
+								<a href="#popup-playpal"><i class="fas fa-user-plus"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="player-reviews">
+				Player Reviews <a href="#popup-review"><i class="fas fa-plus"></i></a>
+			</div>
+			<div class="details-container">
+				<div class="reviews-container">
+					<div class="review-box">
+						<div class="review-profile">
+							<i class="fas fa-user-circle"></i>
+						</div>
+						<div class="review-info">
+							<p>Man, I love some table tennis, so I was excited to check SPIN out! We arrived mid-day on a Saturday and got stuck on a wait list for a table (which was not too shocking). No matter - we headed to the bar and ordered a drink and some food. The hostess told us that our table would be ready at ~5:45 PM (and told us this estimate should be pretty darn accurate!), so imagine our surprise when I got a text informing us that our table was ready at ~5:05 PM. Our food had literally just arrived and we had to go play some table tennis!</p>
+						</div>
+					</div>
+					<div class="review-box">
+						<div class="review-profile">
+							<i class="fas fa-user-circle"></i>
+						</div>
+						<div class="review-info">
+							<p>Where do you go and get an endless amount of balls? Here of course! Actually a line from Season 2's 'Nurse Jackie' ("...Ping-Pong at a club Susan Sarandon opened")- brought us here. I Googled that sucker right away and in the middle of watching the episode, hubby searched SPIN, read the info, reserved and paid on the spot. Rest is history.
+							<br>
+							<br>
+							I'm no Forrest Gump- but I can certainly hold my own with good eye-hand coordination. Hubby always had a knack though for Handball, Paddleball and Racquetball- so Ping Pong somehow came easy for him. If you're on 23rd, you'd never think Ping Pong existed here. Street level entrance gives way to a small waiting area and stairs leading to where it all starts. Restrooms at the bottom of the stairs- plus SPIN's Front Desk to briefly check-in. Beyond that point, place is sprawling and really digging the Underground style that's decked out real nice with an elevated industrial chic. Seating booths and high stools available, plus a colorful Bar towards the back end.</p>
+						</div>
+					</div>
+				</div>
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.9876905028336!2d-73.9891547846342!3d40.74029637932886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25e53d445199b%3A0x643dafa6695c23a4!2sSPIN%20New%20York%2023!5e0!3m2!1sen!2sus!4v1604180215866!5m2!1sen!2sus" id="map-SPIN"></iframe>
+			</div>
+
+		</div>
+
+	</div>
+	<div id="headline">
+		Table Tennis Clubs closest to me...
+	</div>
+	<div id="results">
+		<div class="box" id="result-SPIN">
+			<img src='images/table-tennis-SPIN.jpg' alt='pic-SPIN' id="pic-SPIN">
+			<div class="info-box">
+				<div class="club-name">
+					<a href="#popup-SPIN">SPIN New York 23</a>
+				</div>
+				<div class="club-distance">
+					1.5 miles from me
+				</div>
+				<div class="club-attribute">
+					<ul>
+						<li><i class="far fa-check-circle">&nbsp;</i>Walk-in</li>
+						<li><i class="far fa-check-circle">&nbsp;</i>Casual</li>
+					</ul>
+				</div>
+			</div>
+			<div class="playpal">
+				<div class="looking-for-playpal">
+					Looking For Playpals!
+				</div>
+				<div class="playpal-container">
+					<div class="playpal-box">
+						<div class="playpal-profile">
+							<i class="fas fa-user-circle"></i>
+						</div>
+						<div class="playpal-info">
+							3 years of experience
+							<br>
+							Sat & Sun 9AM ~ 3PM
+						</div>
+					</div>
+					<div class="playpal-box">
+						<div class="playpal-profile">
+							<i class="fas fa-user-circle"></i>
+						</div>
+						<div class="playpal-info">
+							8 years of experience
+							<br>
+							Sat 9AM ~ 12PM
+						</div>
+					</div>
+					<div class="playpal-box">
+						<div class="playpal-profile">
+							<i class="fas fa-user-circle"></i>
+						</div>
+						<div class="playpal-info">
+							20 years of experience
+							<br>
+							Sun & Mon 9AM ~ 1PM
+						</div>
+					</div>
+					<div class="playpal-box">
+						<div class="playpal-add">
+							<a href="#popup-playpal"><i class="fas fa-user-plus"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="box" id="result-WangChen">
+			<img src='images/table-tennis-WangChen.jpg' alt='pic-WangChen' id="pic-WangChen">
+			<div class="info-box">
+				<div class="club-name">
+					Wang Chen Club
+				</div>
+				<div class="club-distance">
+					2.6 miles from me
+				</div>
+				<div class="club-attribute">
+					<ul>
+						<li><i class="far fa-check-circle">&nbsp;</i>Walk-in</li>
+						<li><i class="far fa-check-circle">&nbsp;</i>Casual</li>
+						<li><i class="far fa-check-circle">&nbsp;</i>Professional</li>
+					</ul>
+				</div>
+			</div>
+			<div class="playpal">
+				<div class="looking-for-playpal">
+					Looking For Playpals!
+				</div>
+				<div class="playpal-container">
+					<div class="playpal-box">
+						<div class="playpal-profile">
+							<i class="fas fa-user-circle"></i>
+						</div>
+						<div class="playpal-info">
+							15 years of experience
+							<br>
+							Sat & Sun 9AM ~ 12PM
+						</div>
+					</div>
+					<div class="playpal-box">
+						<div class="playpal-profile">
+							<i class="fas fa-user-circle"></i>
+						</div>
+						<div class="playpal-info">
+							1 years of experience
+							<br>
+							Sun 8AM ~ 5PM
+						</div>
+					</div>
+					<div class="playpal-box">
+						<div class="playpal-profile">
+							<i class="fas fa-user-circle"></i>
+						</div>
+						<div class="playpal-info">
+							3 years of experience
+							<br>
+							Mon & Thu 2PM ~ 4PM
+						</div>
+					</div>
+					<div class="playpal-box">
+						<div class="playpal-add">
+							<a href="#popup-playpal"><i class="fas fa-user-plus"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="box" id="result-PingPod">
+			<img src='images/table-tennis-PingPod.jpg' alt='pic-PingPod' id="pic-PingPod">
+			<div class="info-box">
+				<div class="club-name">
+					PINGPOD
+				</div>
+				<div class="club-distance">
+					3.1 miles from me
+				</div>
+				<div class="club-attribute">
+					<ul>
+						<li><i class="far fa-check-circle">&nbsp;</i>Casual</li>
+						<li><i class="far fa-check-circle">&nbsp;</i>Professional</li>
+					</ul>
+				</div>
+			</div>
+			<div class="playpal">
+				<div class="looking-for-playpal">
+					Looking For Playpals!
+				</div>
+				<div class="playpal-container">
+					<div class="playpal-box">
+						<div class="playpal-profile">
+							<i class="fas fa-user-circle"></i>
+						</div>
+						<div class="playpal-info">
+							3 years of experience
+							<br>
+							Wed 11AM ~ 12PM
+						</div>
+					</div>
+					<div class="playpal-box">
+						<div class="playpal-profile">
+							<i class="fas fa-user-circle"></i>
+						</div>
+						<div class="playpal-info">
+							17 years of experience
+							<br>
+							Fri & Sat 1PM ~ 5PM
+						</div>
+					</div>
+					<div class="playpal-box">
+						<div class="playpal-profile">
+							<i class="fas fa-user-circle"></i>
+						</div>
+						<div class="playpal-info">
+							10 years of experience
+							<br>
+							Sat & Sun 4PM ~ 9PM
+						</div>
+					</div>
+					<div class="playpal-box">
+						<div class="playpal-add">
+							<a href="#popup-playpal"><i class="fas fa-user-plus"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>
