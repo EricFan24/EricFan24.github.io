@@ -4,7 +4,7 @@ body {
 	background-repeat: no-repeat;
 	background-attachment: fixed;
     background-position: center;
-    font-size: 2em;
+    font-size: 3em;
 
 }
 
@@ -20,17 +20,18 @@ body {
 .myForm {
 	text-align: center;
 	margin: auto;
-	width: 400px;
+	width: 600px;
+	margin-top: 50px;
 }
 
 .formDescription {
-	margin: 10px;
-	margin-top: 20px;
+	margin: 20px;
+	
 }
 
 .formDescription input{
-	width: 45px;
-	height: 30px;
+	width: 50px;
+	height: 40px;
 }
 
 .Box {
@@ -39,6 +40,7 @@ body {
 	text-align: center;
 	border: solid black 1px;
 }
+
 
 .button {
 	font-size: 1.2em;
@@ -55,8 +57,8 @@ body {
 }
 
 #location {
-	width: 300px;
-	height: 20px;
+	width: 400px;
+	height: 60px;
 }
 
 a{
