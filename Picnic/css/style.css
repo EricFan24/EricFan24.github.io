@@ -81,7 +81,7 @@ a{
 #next{
 	margin: auto;
 	text-align: center;
-	margin-top: 300px;
+	margin-top: 150px;
 	width: 200px;
 	color: #0B5394;
 	font-size: 30px;
@@ -150,7 +150,7 @@ a{
 }
 
 #price-range {
-	width: 700px;
+	width: 600px;
 	height: 50px;
 	border: 0;
 }
