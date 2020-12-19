@@ -42,7 +42,7 @@ body {
 	border: solid grey 1px;
 	border-radius: 25px;
 	border: solid #0B5394 3.5px;
-	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+	box-shadow: 5px 10px 18px #888888;
 }
 
 
@@ -56,15 +56,6 @@ body {
 
 }
 
-.button:hover {
- 	text-shadow: 3px 3px 7px #0B5394;
- 	color: white;
-}
-
-.button:active {
-	text-shadow: 3px 3px 7px #0B5394;
-	color: white;
-}
 
 #popup-buttons {
 	display: grid;
@@ -85,6 +76,20 @@ body {
 
 }
 
+#popup-buttons .button:hover {
+	border: solid #BC2E2E 3.5px;
+	background: white;
+	color: #BC2E2E;
+}
+
+#popup-buttons a:visited {
+	color: white;
+}
+
+#popup-buttons a:hover {
+	color: #BC2E2E;
+}
+
 #location-input {
 	width: 450px;
 	height: 60px;
@@ -96,15 +101,29 @@ a{
 	text-decoration: none;
 }
 
+a:visited {
+ 	color: #0B5394;
+}
+
 #next{
 	margin: auto;
 	text-align: center;
 	margin-top: 150px;
 	width: 220px;
-	background: #0B5394;
+	background: white;
 	font-size: 30px;
+	color: #0B5394;
+}
+
+#next:hover{
+	background: #0B5394;
 	color: white;
 }
+
+#next a:hover {
+	color: white;
+}
+
 
 .progress-bar {
 	width: 80%;
@@ -121,45 +140,26 @@ a{
 	background: #EDB35C;
 }
 
-.restaurant-card {
-	margin: auto;
-	width: 80%;
-	height: 900px;
-	border: solid black 1px;
-	margin-top: 20px;
-}
 
-.restaurant-name {
-	width: 100%;
-	height: 250px;
-	border: solid black 1px;
-	display: flex;
-	background-image: url('../images/chipotle.jpg');
-	background-repeat: no-repeat;
-	background-size: cover;
-    background-position: center;
-}
-
-
-.restaurant-name span {
-  align-self: flex-end;
-  color: white;
-  padding: 20px;
-  font-weight: 1000;
-  font-size: 60px;
-}
 
 
 .cuisine-type {
 	display: grid;
 	grid-template-columns: 50% 50%;
 	padding: 25px;
+
+
 }
 
 
 .cuisine-type i:hover  {
 	color: #0B5394;
 }
+
+.cuisine-type i:active  {
+	color: #0B5394;
+}
+
 
 #dietary-restriction {
 	width: 450px;
@@ -192,6 +192,15 @@ a{
 
 #lets-eat a {
 	color: white;
+}
+
+#lets-eat:hover{
+	background: white;
+	color: #0B5394;
+}
+
+#lets-eat a:hover {
+	color: #0B5394;
 }
 
 .overlay {
@@ -273,4 +282,152 @@ a{
 	text-align: center;
 	width: 600px;
 	padding-right: 140px;
+}
+
+.restaurant-card {
+	margin: auto;
+	width: 80%;
+	height: 1550px;
+	margin-top: 20px;
+	background: white;
+	border-radius: 25px;
+	box-shadow: 5px 10px 18px #888888;
+}
+
+.restaurant-name {
+	width: 100%;
+	height: 250px;
+	display: flex;
+	background-image: url('../images/chipotle.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+    background-position: center;
+}
+
+
+.restaurant-name span {
+  align-self: flex-end;
+  color: white;
+  padding: 30px;
+  font-weight: 1000;
+  font-size: 90px;
+}
+
+.details {
+	display: grid;
+	grid-template-columns: 50% 50%;
+	grid-template-rows: 80px 80px;
+	margin: auto;
+	padding: 30px;
+}
+
+#cuisine-price, #hours, .dish-name {
+	text-align: left;
+}
+
+#stars, #distance, .dish-price {
+	text-align: right;
+}
+
+#hours , #distance {
+	color: #0B5394;
+}
+
+#stars {
+	color: #EDB35C;
+}
+
+.dish-container {
+	padding: 30px;
+	display: grid;
+	grid-template-columns: 47% 6% 47%;
+}
+
+.dish {
+	display: grid;
+	grid-template-rows: 70px 400px;
+}
+
+.dish-detail {
+	display: grid;
+	grid-template-columns: 70% 30%;
+}
+
+#dish-pic-bowl {
+	height: 400px;
+	background-image: url('../images/bowl.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+    background-position: center;
+}
+
+.dish-price, .popular-dishes-title, .location-title {
+	opacity: 0.7;
+}
+
+#dish-pic-burrito {
+	height: 400px;
+	background-image: url('../images/burrito.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+    background-position: center;
+}
+
+.popular-dishes-title  {
+	margin-top: 30px;
+	padding-left: 30px;
+}
+
+.location {
+	text-align: center;
+	padding: 30px;
+}
+
+.location iframe {
+	 width: 100%;
+	 height: 300px;
+	 
+}
+
+.location-title {
+	text-align: left;
+	margin-top: 30px;
+	margin-bottom: 20px;
+}
+
+.selection-panel {
+	width: 80%;
+	height: 100px;
+	text-align: center;
+	vertical-align: middle;
+	margin: auto;
+	padding: 20px 0px;
+	margin-top: 10px;
+	background: white;
+	border-radius: 25px;
+	box-shadow: 5px 10px 18px #888888;
+	display: flex;
+ 	justify-content: center;
+ 	align-items: center;
+ 	flex-wrap: nowrap;
+}
+
+.selection-panel > div {
+  width: 16%;
+  text-align: center;
+}
+
+#veto {
+	color: #BC2E2E;
+	font-size: 70px;
+}
+
+#dislike, #like {
+	color: #0B5394;
+	font-size: 100px;
+}
+
+#superlike {
+	color: #F1AE48;
+	font-size: 70px;
 }
