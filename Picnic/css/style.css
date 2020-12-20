@@ -287,7 +287,7 @@ a:visited {
 .restaurant-card {
 	margin: auto;
 	width: 80%;
-	height: 1450px;
+	height: 1400px;
 	margin-top: 20px;
 	background: white;
 	border-radius: 25px;
@@ -319,7 +319,7 @@ a:visited {
 	grid-template-rows: 50px 50px;
 	margin: auto;
 	padding: 30px;
-	font-size: 30px;
+	font-size: 40px;
 }
 
 #cuisine-price, #hours, .dish-name {
@@ -376,7 +376,7 @@ a:visited {
 }
 
 .popular-dishes-title  {
-	margin-top: 50px;
+	margin-top: 30px;
 	padding-left: 30px;
 }
 
@@ -393,7 +393,7 @@ a:visited {
 
 .location-title {
 	text-align: left;
-	margin-top: 30px;
+	margin-top: 10px;
 	margin-bottom: 20px;
 }
 
