@@ -315,11 +315,11 @@ a:visited {
 
 .details {
 	display: grid;
-	grid-template-columns: 65% 35%;
+	grid-template-columns: 60% 40%;
 	grid-template-rows: 50px 50px;
 	margin: auto;
 	padding: 30px;
-	font-size: 40px;
+	font-size: 35px;
 }
 
 #cuisine-price, #hours, .dish-name {
