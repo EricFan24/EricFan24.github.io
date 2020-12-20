@@ -315,7 +315,7 @@ a:visited {
 
 .details {
 	display: grid;
-	grid-template-columns: 60% 40%;
+	grid-template-columns: 55% 45%;
 	grid-template-rows: 50px 50px;
 	margin: auto;
 	padding: 30px;
@@ -379,11 +379,13 @@ a:visited {
 .popular-dishes-title  {
 	margin-top: 50px;
 	padding-left: 30px;
+	font-size: 45px;
 }
 
 .location {
 	text-align: center;
 	padding: 30px;
+	font-size: 45px;
 }
 
 .location iframe {
