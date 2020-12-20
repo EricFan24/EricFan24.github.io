@@ -341,7 +341,7 @@ a:visited {
 .dish-container {
 	padding: 30px;
 	display: grid;
-	grid-template-columns: 47% 6% 47%;
+	grid-template-columns: 48% 4% 48%;
 }
 
 .dish {
@@ -379,7 +379,7 @@ a:visited {
 .popular-dishes-title  {
 	margin-top: 50px;
 	padding-left: 30px;
-	font-size: 45px;
+	font-size: 40px;
 }
 
 .location {
