@@ -1,0 +1,16 @@
+body {
+	font-family: Helvetica Neue,Helvetica,Arial,sans-serif; 
+	background-image: url('../images/BG.svg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+    background-position: center;
+    font-size: 50px;
+    color: #5A5A5A;
+
+}
+
+.container{
+    width: 30%;
+    margin-left:auto;
+    margin-right:auto;
+}
