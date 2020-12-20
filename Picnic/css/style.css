@@ -347,7 +347,7 @@ a:visited {
 .dish {
 	display: grid;
 	grid-template-rows: 50px 300px;
-	font-size: 40px;
+	font-size: 35px;
 }
 
 .dish-detail {
