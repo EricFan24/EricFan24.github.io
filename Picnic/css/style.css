@@ -27,12 +27,12 @@ body {
 
 .formDescription {
 	margin: 20px;
-	
 }
 
 .formDescription input{
 	width: 50px;
 	height: 40px;
+	font-size: 40px;
 }
 
 .Box {
@@ -96,6 +96,7 @@ body {
 	border: 0;
 	font-size: 30px;
 }
+
 
 a{
 	text-decoration: none;
@@ -175,6 +176,7 @@ a:visited {
 	width: 600px;
 	height: 50px;
 	border: 0;
+
 }
 
 #price-dollars {
