@@ -189,6 +189,9 @@ d3.csv("https://raw.githubusercontent.com/EricFan24/CookCountyCOVID/main/AllCook
   .attr("font-weight", "bold")
   .attr("font-size", "9px");
 
+  var parseTime = d3.timeParse("%Y-%m-%d");
+  var formatTime = d3.timeFormat("%b %d, %Y");
+
    svg
     .selectAll("rect")
     .on('mouseover', function(d) {
@@ -198,7 +201,8 @@ d3.csv("https://raw.githubusercontent.com/EricFan24/CookCountyCOVID/main/AllCook
        d3.select('#tooltip')
        .transition().duration(200)
        .style('opacity', 1)
-       .text(d.key + ": " + Math.round((d[1]-d[0])*10000)/100+'%')
+       .text(d.key + ": " + Math.round((d[1]-d[0])*10000)/100+'%' +  " (Week of " + formatTime(parseTime(d.data.year_week)) + ")");
+
        })
        .on('mouseout', function() {
        d3.select('#tooltip').style('opacity', 0);
