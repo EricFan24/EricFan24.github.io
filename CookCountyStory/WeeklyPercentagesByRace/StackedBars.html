@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+body {
+  font-family: sans-serif;
+  color: #444;
+}
+
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+.axis text {
+  font-size: 10px;
+}
+
+#bars {
+  margin: 0 auto;
+  max-width: 700px;
+  width: 100%;
+}
+
+#tooltip {
+  color: white;
+  text-shadow: 1px 1px grey;
+}
+
+
+</style>
+
+<body>
+
+
+
+<div id="bars"></div>
+
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script>
+
+
+d3.csv("https://raw.githubusercontent.com/EricFan24/CookCountyCOVID/main/AllCook_covid_race_week.csv").then(function(data) {
+
+  const height = 270;
+  const width = 400;
+  margin = ({top: 20, right: 65, bottom: 50, left: 20});
+
+  series = d3.stack()
+    .keys(data.columns.slice(1))
+  (data)
+    .map(d => (d.forEach(v => v.key = d.key), d));
+
+  console.log(series);
+
+  const parse_time = d3.timeParse("%Y-%m-%d");
+
+  yaxis_format = d3.format(".0%");
+
+  x = d3.scaleBand()
+    .domain(data.map(d => d.year_week))
+    .range([margin.left, width - margin.right])
+    .padding(0.03);
+
+  y = d3.scaleLinear()
+    .domain([0, d3.max(series, d => d3.max(d, d => d[1]))])
+    .range([height - margin.bottom, margin.top]);
+
+  color = d3.scaleOrdinal()
+    .domain(series.map(d => d.key))
+    .range(['#e41a1c','#1f77b4','#4daf4a','#ff7f00','#999999'])
+    .unknown("#ccc");
+
+  svg = d3.select("#bars")
+    .append("svg")
+    .attr("viewBox", [0, 0, width, height]);
+  
+  d3.select('body')
+    .append('div')
+    .attr('id', 'tooltip')
+    .attr('style', 'position: absolute; opacity: 0;');
+
+
+  svg.append("g")
+    .selectAll("g")
+    .data(series)
+    .join("g")
+      .attr("fill", d => color(d.key))
+    .selectAll("rect")
+    .data(d => d)
+    .join("rect")
+      .attr("x", (d, i) => x(d.data.year_week))
+      .attr("y", d => y(d[1]))
+      .attr("height", d => y(d[0]) - y(d[1]))
+      .attr("width", x.bandwidth())
+    .on('mouseover', function(d) {
+       d3.select(this)
+        .attr("stroke", "white")
+        .attr("stroke-width", "0.5px");
+
+       d3.select('#tooltip')
+       .transition().duration(200)
+       .style('opacity', 1)
+       .text(Math.round((d[1]-d[0])*10000)/100+'%')
+       })
+       .on('mouseout', function() {
+       d3.select('#tooltip').style('opacity', 0);
+       d3.select(this)
+        .attr("stroke-width", "0px");
+       })
+       .on('mousemove', function() {
+       d3.select('#tooltip').style('left', (d3.event.pageX+10) + 'px').style('top', (d3.event.pageY+10) + 'px')
+     });
+
+
+       //.tickValues([0.2,0.4,0.6,0.8,1.0])
+  svg.append("g")
+    .attr("transform", `translate(${margin.left},0)`)
+    .call(d3.axisLeft(y).ticks(5).tickSize(2).tickFormat(d3.format(".0%")).tickValues([0.2,0.4,0.6,0.8,0.99]))
+    .call(g => g.selectAll(".domain").remove())
+    .selectAll("text")
+    .attr("font-size", "7px");
+
+  svg.selectAll("legendSquares")
+  .data(series)
+  .enter()
+  .append("rect")
+    .attr("x", width - margin.right + 5)
+    .attr("y", function(d,i){ return margin.top + 5 + i*(15)}) // 100 is where the first dot appears. 25 is the distance between dots
+    .attr("width", 10)
+    .attr("height", 10)
+    .style("fill", d => color(d.key));
+
+  svg.selectAll("mylabels")
+  .data(series)
+  .enter()
+  .append("text")
+    .attr("x", width - margin.right + 17)
+    .attr("y", function(d,i){ return margin.top + 10 + i*(15)}) // 100 is where the first dot appears. 25 is the distance between dots
+    .style("fill", d => color(d.key))
+    .text(d => d.key)
+    .attr("text-anchor", "left")
+    .style("alignment-baseline", "middle")
+    .attr("font-size", "7px");
+
+  svg
+    .append("line")
+    .style("stroke", "white")
+    .style("stroke-width", 1.5)
+    .attr("x1", margin.left )
+    .attr("y1", (height - margin.bottom - (height - margin.bottom - margin.top) / 100 * 23.8))
+    .attr("x2", width - margin.right + 2)
+    .attr("y2", (height - margin.bottom - (height - margin.bottom - margin.top) / 100 * 23.8))
+    .attr("stroke-dasharray", "2,0,2");
+
+  svg
+  .append("text")
+  .text("Cook County is 23.8% African American")
+  .attr("x", margin.left + 6)
+  .attr("y", (height - margin.bottom - (height - margin.bottom - margin.top) / 100 * 23.8) + 15)
+  .style('fill', 'white')
+  .attr("font-weight", "bold")
+  .attr("font-size", "8px");
+
+  svg
+  .append("text")
+  .text("March 16, 2020")
+  .attr("x", margin.left - 15)
+  .attr("y", height - margin.bottom + 12)
+  .style('fill', 'black')
+  .attr("font-weight", "bold")
+  .attr("font-size", "8px");
+
+  svg
+  .append("text")
+  .text("February 15, 2021")
+  .attr("x", width - margin.right - 40)
+  .attr("y", height - margin.bottom + 12)
+  .style('fill', 'black')
+  .attr("font-weight", "bold")
+  .attr("font-size", "8px");
+
+  svg // credit
+  .append("text")
+  .text("Graphic by Eric Fan | Brown Institute for Media Innovation")
+  .attr("x", margin.left - 15)
+  .attr("y", height - 20)
+  .style('fill', 'grey')
+  .attr("font-size", "7px");
+
+  svg // source
+  .append("text")
+  .text("Source: Cook County Medical Examiner")
+  .attr("x", margin.left - 15)
+  .attr("y", height - 10)
+  .style('fill', 'grey')
+  .attr("font-size", "7px");
+
+  svg // title
+  .append("text")
+  .text("Weekly COVID Death Percentages by Race, Cook County")
+  .attr("x", 0)
+  .attr("y", 10)
+  .style('fill', 'black')
+  .attr("font-weight", "bold")
+  .attr("font-size", "9px");
+
+});
+
+
+
+</script>
