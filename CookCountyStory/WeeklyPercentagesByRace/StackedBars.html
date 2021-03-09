@@ -94,27 +94,7 @@ d3.csv("https://raw.githubusercontent.com/EricFan24/CookCountyCOVID/main/AllCook
       .attr("x", (d, i) => x(d.data.year_week))
       .attr("y", d => y(d[1]))
       .attr("height", d => y(d[0]) - y(d[1]))
-      .attr("width", x.bandwidth())
-    
-  svg
-    .selectAll("rect")
-    .on('mouseover', function(d) {
-       d3.select(this)
-        .attr("stroke", "white")
-        .attr("stroke-width", "0.5px");
-       d3.select('#tooltip')
-       .transition().duration(200)
-       .style('opacity', 1)
-       .text(Math.round((d[1]-d[0])*10000)/100+'%')
-       })
-       .on('mouseout', function() {
-       d3.select('#tooltip').style('opacity', 0);
-       d3.select(this)
-        .attr("stroke-width", "0px");
-       })
-       .on('mousemove', function() {
-       d3.select('#tooltip').style('left', (d3.event.pageX+10) + 'px').style('top', (d3.event.pageY+10) + 'px')
-     });
+      .attr("width", x.bandwidth());
 
 
        //.tickValues([0.2,0.4,0.6,0.8,1.0])
@@ -208,6 +188,28 @@ d3.csv("https://raw.githubusercontent.com/EricFan24/CookCountyCOVID/main/AllCook
   .style('fill', 'black')
   .attr("font-weight", "bold")
   .attr("font-size", "9px");
+
+   svg
+    .selectAll("rect")
+    .on('mouseover', function(d) {
+       d3.select(this)
+        .attr("stroke", "white")
+        .attr("stroke-width", "0.5px");
+       d3.select('#tooltip')
+       .transition().duration(200)
+       .style('opacity', 1)
+       .text(d.key + ": " + Math.round((d[1]-d[0])*10000)/100+'%')
+       })
+       .on('mouseout', function() {
+       d3.select('#tooltip').style('opacity', 0);
+       d3.select(this)
+        .attr("stroke-width", "0px");
+       })
+       .on('mousemove', function() {
+       d3.select('#tooltip').style('left', (d3.event.pageX+10) + 'px').style('top', (d3.event.pageY+10) + 'px')
+     });
+
+    
 
 });
 
