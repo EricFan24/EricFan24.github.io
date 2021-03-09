@@ -70,7 +70,7 @@ d3.csv("https://raw.githubusercontent.com/EricFan24/CookCountyCOVID/main/AllCook
 
   color = d3.scaleOrdinal()
     .domain(series.map(d => d.key))
-    .range(['#e41a1c','#1f77b4','#4daf4a','#ff7f00','#999999'])
+    .range(['#e41a1c','#1f77b4','#94C973','#FAD480','#999999'])
     .unknown("#ccc");
 
   svg = d3.select("#bars")
@@ -95,11 +95,13 @@ d3.csv("https://raw.githubusercontent.com/EricFan24/CookCountyCOVID/main/AllCook
       .attr("y", d => y(d[1]))
       .attr("height", d => y(d[0]) - y(d[1]))
       .attr("width", x.bandwidth())
+    
+  svg
+    .selectAll("rect")
     .on('mouseover', function(d) {
        d3.select(this)
         .attr("stroke", "white")
         .attr("stroke-width", "0.5px");
-
        d3.select('#tooltip')
        .transition().duration(200)
        .style('opacity', 1)
