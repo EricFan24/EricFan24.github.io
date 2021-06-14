@@ -5,8 +5,11 @@
 *Indevidual Project for COMS W170: User Interface Design, Columbia University*
 
 #Active Links/Interactions
+
 -Home Page: table tennis option (link to Results Page)
+
 -Home Page: show everything (link to Results Page)
+
 -Home Page: log in (pop up Log-In Form)
 -Home Page: sign up (pop up sign-Up Form)
 -Results Page: SPIN New York 23 (pop up Club Details)
