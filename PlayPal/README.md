@@ -29,6 +29,6 @@
 - Profile Page: remove playpal info
 - This demo is currently static. There is no backend data storage or update.
 
-### Credit:
+### Credits:
 - Pop-up design adapted from @sahil: https://codepen.io/sahil4test/pen/xERYvX
 - Demo player reviews adapted from Yelp reviews
