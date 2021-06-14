@@ -52,7 +52,7 @@ html, body {
     font-size: 1.5em;
     padding: .1em .25em;
     background-color: hsla(80, 50%, 80%, 0.2);
-    border: 1px solid hsla(80, 80%, 30%, 1);
+    border: 1px solid hsla(80, 70%, 50%, 1);
     outline: none;
     border-radius: 5px;
     color: white;
@@ -60,7 +60,7 @@ html, body {
 }
 
 .input-group input:focus {
-    border: 1px solid hsla(80, 60%, 50%, 1);
+    border: 1px solid white;
 }
 
 .login-submit-button {
