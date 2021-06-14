@@ -1,4 +1,4 @@
-## Play-pal: A Sport Club Directory And A Platform For Player-Finding
+# Play-pal: A Sport Club Directory And A Platform For Player-Finding
 
 *Author: Eric Fan*
 *Date: 10/31/2020*
