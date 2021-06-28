@@ -8,6 +8,7 @@
     min-width: 300px;
     min-height: 400px;
     margin: auto;
+    padding-top: 200px;
 }
 
 .active[data-tab-content] {
