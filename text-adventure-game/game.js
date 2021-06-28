@@ -56,7 +56,7 @@ const textNodes = [
     },
     {
         id: 2,
-        text: 'As you attempt to get up, burning pain pierced through your right thigh...',
+        text: 'You feel pain piercing through your right thigh as you attempt to get up...',
         options: [
             {
                 text: 'Let the Magpie heal your wound',
