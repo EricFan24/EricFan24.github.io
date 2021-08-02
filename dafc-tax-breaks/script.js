@@ -13,7 +13,7 @@ function init() {
 
   data.forEach(item => {
       const marker = L.marker([item.Latitude, item.Longitude]).addTo(mymap);
-      marker.bindPopup(item["Project Owner/Name"]);
+      marker.bindPopup(`${item["Project Owner/Name"]}<br>Estimated abatement value: ${ formatter.format(item["DAFC estimated abatement value"] || item["AJC estimate of abatement value if none provided"])}`);
   })
 
   $.getJSON("Tax_Allocation_District.geojson", function(shapes){
@@ -21,6 +21,11 @@ function init() {
   });
 }
 
+const formatter = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
+  maximumFractionDigits: 0
+});
 
 const data = [
     {
