@@ -1,20 +1,24 @@
 const accessToken = 'pk.eyJ1IjoiZXJpY2ZhbjI0IiwiYSI6ImNrcHhlY3dsajIzbXQydnFjZGd3ZWR0MWkifQ.2UHQDJPhlp5Cx423H0MQOg';
 
 function init() {
-    const mymap = L.map('map').setView([33.748168884499556, -84.39344641017966], 11);
+  const mymap = L.map('map').setView([33.748168884499556, -84.39344641017966], 11);
 
-    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZXJpY2ZhbjI0IiwiYSI6ImNrcHhlY3dsajIzbXQydnFjZGd3ZWR0MWkifQ.2UHQDJPhlp5Cx423H0MQOg', {
-        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-        maxZoom: 18,
-        id: 'mapbox/streets-v11',
-        tileSize: 512,
-        zoomOffset: -1
-    }).addTo(mymap);
+  L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZXJpY2ZhbjI0IiwiYSI6ImNrcHhlY3dsajIzbXQydnFjZGd3ZWR0MWkifQ.2UHQDJPhlp5Cx423H0MQOg', {
+      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+      maxZoom: 18,
+      id: 'mapbox/streets-v11',
+      tileSize: 512,
+      zoomOffset: -1
+  }).addTo(mymap);
 
-    data.forEach(item => {
-        const marker = L.marker([item.Latitude, item.Longitude]).addTo(mymap);
-        marker.bindPopup(item["Project Owner/Name"]);
-    })
+  data.forEach(item => {
+      const marker = L.marker([item.Latitude, item.Longitude]).addTo(mymap);
+      marker.bindPopup(item["Project Owner/Name"]);
+  })
+
+  $.getJSON("Tax_Allocation_District.geojson", function(shapes){
+    L.geoJson(shapes).addTo(mymap);
+  });
 }
 
 
@@ -103,35 +107,6 @@ const data = [
       "Approval": "Unanimous",
       "Latitude": 33.762514,
       "Longitude": -84.396008,
-      "Accuracy Score": 0.9,
-      "Accuracy Type": "rooftop"
-    },
-    {
-      "Year": 2018,
-      "Date of initial or final approval": "2/27/2018",
-      "Project Owner/Name": "Centennial Lofts CCC-Atlanta GT LLC",
-      "Address": "556 Centennial Olympic Park Drive",
-      "City": "Atlanta",
-      "State": "GA",
-      "Commission District": "4-Hall",
-      "North I-20/South I-20 or Beltline": "North",
-      "Project type": "Student housing",
-      "Workforce Units": "None Listed",
-      "Affordable Units": "None listed",
-      "Bond Value": "",
-      "Abatement or other": "Abatement",
-      "DAFC estimated abatement value": "",
-      "AJC estimate of abatement value if none provided": "",
-      "Est. Full-time jobs created if for a tenant": "",
-      "Claimed FT office jobs spec": "",
-      "Claimed industrial jobs spec": "",
-      "TAD": "Downtown",
-      "CID": "Westside",
-      "Status": "DEAD",
-      "Other": "254 apartments and 510 parking spaces for the Centennial Academy Charter School and Blank YMCA",
-      "Approval": "Unanimous initial approval",
-      "Latitude": 33.769597,
-      "Longitude": -84.392468,
       "Accuracy Score": 0.9,
       "Accuracy Type": "rooftop"
     },
@@ -391,8 +366,8 @@ const data = [
       "Status": "Final Resolution December 2019",
       "Other": "More than 500,000 sf of Class AA office in two buildings. Microsoft becomes the eventual anchor tenant.",
       "Approval": "Unanimous",
-      "Latitude": 33.79102,
-      "Longitude": -84.389659,
+      "Latitude": 33.79157826336098, 
+      "Longitude": -84.3922439698128,
       "Accuracy Score": 1,
       "Accuracy Type": "range_interpolation"
     },
@@ -420,8 +395,8 @@ const data = [
       "Status": "Final Resolution April 2019",
       "Other": "Overhaul of The Met, a 1914-era warehouse built by Asa Candler, into an artisan and makers space. Project will have approximately 30 residences and comply with Atlanta's affordable housing rules of 15% of units at 80% AMI",
       "Approval": "Unanimous",
-      "Latitude": 33.798357,
-      "Longitude": -84.260803,
+      "Latitude": 33.736631096299185, 
+      "Longitude": -84.41039267975206,
       "Accuracy Score": 1,
       "Accuracy Type": "range_interpolation"
     },
@@ -1182,35 +1157,6 @@ const data = [
     {
       "Year": 2019,
       "Date of initial or final approval": "2/26/2019",
-      "Project Owner/Name": "Fairfield Residential Company LLC",
-      "Address": "1944 St. Johns Avenue",
-      "City": "Atlanta",
-      "State": "GA",
-      "Commission District": "5-Arrington",
-      "North I-20/South I-20 or Beltline": "South",
-      "Project type": "Apartments",
-      "Workforce Units": "",
-      "Affordable Units": 256,
-      "Bond Value": "",
-      "Abatement or other": "Abatement",
-      "DAFC estimated abatement value": "",
-      "AJC estimate of abatement value if none provided": "",
-      "Est. Full-time jobs created if for a tenant": 7,
-      "Claimed FT office jobs spec": "",
-      "Claimed industrial jobs spec": "",
-      "TAD": "No",
-      "CID": "No",
-      "Status": "DEAD",
-      "Other": "A 256-unit affordable housing project at 60% AMI",
-      "Approval": "Unanimous",
-      "Latitude": 33.699582,
-      "Longitude": -84.405935,
-      "Accuracy Score": 0.87,
-      "Accuracy Type": "range_interpolation"
-    },
-    {
-      "Year": 2019,
-      "Date of initial or final approval": "2/26/2019",
       "Project Owner/Name": "PVH Corp (Project Wide Open)",
       "Address": "8500 Tatum Road",
       "City": "Palmetto",
@@ -1733,35 +1679,6 @@ const data = [
     {
       "Year": 2019,
       "Date of initial or final approval": "11/19/2019",
-      "Project Owner/Name": "359 East Paces LLC --Loudermilk Companies",
-      "Address": "359 East Paces Ferry Road",
-      "City": "Atlanta",
-      "State": "GA",
-      "Commission District": "3-Morris",
-      "North I-20/South I-20 or Beltline": "North",
-      "Project type": "Office",
-      "Workforce Units": "N/A",
-      "Affordable Units": "N/A",
-      "Bond Value": "",
-      "Abatement or other": "Abatement",
-      "DAFC estimated abatement value": "",
-      "AJC estimate of abatement value if none provided": "",
-      "Est. Full-time jobs created if for a tenant": "",
-      "Claimed FT office jobs spec": 850,
-      "Claimed industrial jobs spec": "",
-      "TAD": "No",
-      "CID": "Buckhead",
-      "Status": "Failed",
-      "Other": "Redevelopment of a former 12-story office tower. The fact sheet claimed 850 new jobs an $2,180,473 in tax savings offered.",
-      "Approval": "Jolley, Lamont, Tidwell and Turpeau voted it down",
-      "Latitude": 33.838519,
-      "Longitude": -84.375958,
-      "Accuracy Score": 1,
-      "Accuracy Type": "rooftop"
-    },
-    {
-      "Year": 2019,
-      "Date of initial or final approval": "11/19/2019",
       "Project Owner/Name": "Vesta Adams Park LLC",
       "Address": "1991 Delowe Drive SW",
       "City": "Atlanta",
@@ -1957,8 +1874,8 @@ const data = [
       "Status": "Induced March 2020",
       "Other": "Speculative 250,000 sf warehouse for e-commerce or light manufacturing",
       "Approval": "One opposed Tidwell",
-      "Latitude": 33.773197,
-      "Longitude": -84.413853,
+      "Latitude": 33.79011848582224, 
+      "Longitude": -84.4961347846179,
       "Accuracy Score": 1,
       "Accuracy Type": "street_center"
     },
