@@ -1,7 +1,7 @@
 const accessToken = 'pk.eyJ1IjoiZXJpY2ZhbjI0IiwiYSI6ImNrcHhlY3dsajIzbXQydnFjZGd3ZWR0MWkifQ.2UHQDJPhlp5Cx423H0MQOg';
 
 function init() {
-  const mymap = L.map('map').setView([33.748168884499556, -84.39344641017966], 12);
+  const mymap = L.map('map').setView([33.75073586489209, -84.38624307023588], 12);
 
   L.tileLayer('https://api.mapbox.com/styles/v1/{username}/{id}/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoibmV3c2FwcHNhamMiLCJhIjoiM0pwTWxXRSJ9.JhYadcrZzpnUf-gX_PItAQ', {
       attribution: 'Map by <a href="https://www.ajc.com/staff/Eric-Fan/">Eric Fan / AJC</a>, Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -33,7 +33,7 @@ function init() {
     }).addTo(mymap);
 
     function onEachFeature(feature, layer) {
-      layer.bindPopup(feature.properties.ZONEDESC);
+      layer.bindPopup(`Tax Allocation District - ${feature.properties.ZONEDESC}`);
       layer.on({
           mouseover: highlightFeature,
           mouseout: resetHighlight  
@@ -44,7 +44,7 @@ function init() {
       let layer = e.target;
   
       layer.setStyle({
-          weight: 2,
+          weight: 1,
           color: '#666',
           dashArray: '',
           fillOpacity: 0.7
@@ -64,9 +64,9 @@ function init() {
           fillColor: getColor(feature.properties.ZONEDESC),
           weight: 1,
           opacity: 1,
-          color: 'grey',
+          color: 'white',
           dashArray: '3',
-          fillOpacity: 0.8  
+          fillOpacity: 0.8
       };
     }
 
@@ -82,6 +82,18 @@ function init() {
              ZONEDESC == "Hollowell / Martin Luther King"   ? '#fdb462' :
              ZONEDESC == "Campbellton"   ? '#bc80bd' :
                         'red';
+      
+      // return ZONEDESC == "Westside" ? '#fdbf6f' :
+      // ZONEDESC == "Perry/Bolton"  ? '#fb9a99' :
+      // ZONEDESC == "Eastside"  ? '#33a02c' :
+      // ZONEDESC == "Atlantic Station"  ? '#b2df8a' :
+      // ZONEDESC == "Princeton Lakes"   ? '#a6cee3' :
+      // ZONEDESC == "Beltline"   ? '#1f78b4' :
+      // ZONEDESC == "Metropolitan Pkwy"   ? '#e31a1c' :
+      // ZONEDESC == "Stadium"   ? '#ff7f00' :
+      // ZONEDESC == "Hollowell / Martin Luther King"   ? '#cab2d6' :
+      // ZONEDESC == "Campbellton"   ? '#6a3d9a' :
+      //             'red';                  
     }
     let legend = L.control({position: 'bottomright'});
 
