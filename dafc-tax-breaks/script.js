@@ -26,13 +26,82 @@ function init() {
   })
 
   $.getJSON("Tax_Allocation_District.geojson", function(shapes){
-    L.geoJson(shapes, {
-      style: geoJsonStyle
+    const geojson = L.geoJson(shapes, {
+      style: geoJsonStyle,
+      onEachFeature: onEachFeature
     }).addTo(mymap);
+
+    function onEachFeature(feature, layer) {
+      layer.bindPopup(feature.properties.ZONEDESC);
+      layer.on({
+          mouseover: highlightFeature,
+          mouseout: resetHighlight  
+      });
+    }
+
+    function highlightFeature(e) {
+      let layer = e.target;
+  
+      layer.setStyle({
+          weight: 2,
+          color: '#666',
+          dashArray: '',
+          fillOpacity: 0.7
+      });
+  
+      if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+          layer.bringToFront();
+      }
+    }
+
+    function resetHighlight(e) {
+      geojson.resetStyle(e.target);
+    }
+
+    function geoJsonStyle(feature) {
+      return {
+          fillColor: getColor(feature.properties.ZONEDESC),
+          weight: 1,
+          opacity: 1,
+          color: 'grey',
+          dashArray: '3',
+          fillOpacity: 0.85
+      };
+    }
+
+    function getColor(ZONEDESC) {
+      return ZONEDESC == "Westside" ? '#d9d9d9' :
+             ZONEDESC == "Perry/Bolton"  ? '#8dd3c7' :
+             ZONEDESC == "Eastside"  ? '#ffffb3' :
+             ZONEDESC == "Atlantic Station"  ? '#bebada' :
+             ZONEDESC == "Princeton Lakes"   ? '#fb8072' :
+             ZONEDESC == "Beltline"   ? '#80b1d3' :
+             ZONEDESC == "Metropolitan Pkwy"   ? '#b3de69' :
+             ZONEDESC == "Stadium"   ? '#fccde5' :
+             ZONEDESC == "Hollowell / Martin Luther King"   ? '#fdb462' :
+             ZONEDESC == "Campbellton"   ? '#bc80bd' :
+                        'red';
+    }
+    let legend = L.control({position: 'bottomright'});
+
+    legend.onAdd = function (mymap) {
+  
+      let div = L.DomUtil.create('div', 'legend'),
+        categories = ["Westside","Perry/Bolton","Eastside","Atlantic Station","Princeton Lakes","Beltline","Metropolitan Pkwy","Stadium","Hollowell / Martin Luther King","Campbellton"],
+        labels = ['<strong>Tax Allocation Districts</strong>'];
+  
+      for (let i = 0; i < categories.length; i++) {
+        labels.push(
+          '<i class="legendCircle" style="background:' + getColor(categories[i]) + '"></i> ' + (categories[i] ? categories[i] : '+')
+        );
+  
+      div.innerHTML = labels.join('<br>');
+      };
+      return div;
+    }
+    legend.addTo(mymap);
   });
 }
-
-const geoJsonStyle = { "weight": 2, "opacity": 0.7 };
 
 const formatter = new Intl.NumberFormat('en-US', {
   style: 'currency',
@@ -2450,4 +2519,4 @@ const data = [
     }
 ]
 
-init()
+init();
