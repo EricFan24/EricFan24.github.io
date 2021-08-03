@@ -3,12 +3,13 @@ const accessToken = 'pk.eyJ1IjoiZXJpY2ZhbjI0IiwiYSI6ImNrcHhlY3dsajIzbXQydnFjZGd3
 function init() {
   const mymap = L.map('map').setView([33.748168884499556, -84.39344641017966], 12);
 
-  L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZXJpY2ZhbjI0IiwiYSI6ImNrcHhlY3dsajIzbXQydnFjZGd3ZWR0MWkifQ.2UHQDJPhlp5Cx423H0MQOg', {
+  L.tileLayer('https://api.mapbox.com/styles/v1/{username}/{id}/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoibmV3c2FwcHNhamMiLCJhIjoiM0pwTWxXRSJ9.JhYadcrZzpnUf-gX_PItAQ', {
       attribution: 'Map by <a href="https://www.ajc.com/staff/Eric-Fan/">Eric Fan / AJC</a>, Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
       maxZoom: 18,
-      id: 'mapbox/streets-v11',
-      tileSize: 512,
-      zoomOffset: -1
+      username: 'newsappsajc',
+      id: 'ckrwfiyfy15iq17n3q1k793u7'
+      // tileSize: 512,
+      // zoomOffset: -1
   }).addTo(mymap);
 
   data.forEach(item => {
@@ -65,7 +66,7 @@ function init() {
           opacity: 1,
           color: 'grey',
           dashArray: '3',
-          fillOpacity: 0.85
+          fillOpacity: 0.8  
       };
     }
 
