@@ -1,10 +1,10 @@
 const accessToken = 'pk.eyJ1IjoiZXJpY2ZhbjI0IiwiYSI6ImNrcHhlY3dsajIzbXQydnFjZGd3ZWR0MWkifQ.2UHQDJPhlp5Cx423H0MQOg';
 
 function init() {
-  const mymap = L.map('map').setView([33.748168884499556, -84.39344641017966], 11);
+  const mymap = L.map('map').setView([33.748168884499556, -84.39344641017966], 12);
 
   L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZXJpY2ZhbjI0IiwiYSI6ImNrcHhlY3dsajIzbXQydnFjZGd3ZWR0MWkifQ.2UHQDJPhlp5Cx423H0MQOg', {
-      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+      attribution: 'Map by <a href="https://www.ajc.com/staff/Eric-Fan/">Eric Fan / AJC</a>, Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
       maxZoom: 18,
       id: 'mapbox/streets-v11',
       tileSize: 512,
@@ -26,9 +26,13 @@ function init() {
   })
 
   $.getJSON("Tax_Allocation_District.geojson", function(shapes){
-    L.geoJson(shapes).addTo(mymap);
+    L.geoJson(shapes, {
+      style: geoJsonStyle
+    }).addTo(mymap);
   });
 }
+
+const geoJsonStyle = { "weight": 2, "opacity": 0.7 };
 
 const formatter = new Intl.NumberFormat('en-US', {
   style: 'currency',
